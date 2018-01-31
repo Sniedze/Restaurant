@@ -1,59 +1,123 @@
-                            header {
-                                background-color: darkgray;
-                            }
+    header {
+        background-color: darkgray;
+    }
 
-                            li,
-                            h3 {
-                                display: inline-block
-                            }
+    li,
+    nav h3 {
+        display: inline-block
+    }
 
-                            nav {
-                                text-align: center
-                            }
+    nav {
+        text-align: center;
+    }
 
-                            nav h3 {
-                                font-family: Chiller;
-                                font-size: 6em;
-                                color: mediumvioletred
-                            }
+    nav h3 {
+        font-family: Chiller;
+        font-size: 6em;
+        color: mediumvioletred;
+        margin: 0;
+    }
 
-                            #desctop {
-                                display: none;
-                            }
+    #desctop {
+        display: none;
+    }
 
-                            li {
-                                font-size: 1.5em;
-                                margin-right: 15px;
-                            }
+    li {
+        font-size: 1.5em;
+        margin-right: 15px;
+    }
 
-                            body h4 {
-                                font-size: 3em;
-                                text-align: center;
-                            }
+    body h4 {
+        font-size: 4em;
+        text-align: center;
+        font-family: Chiller;
+        margin: 5vh;
+    }
 
-                            #starters {
-                                display: grid;
-                                grid-template-columns: repeat(auto-fill, minmax(35em, 1fr));
-                                grid-gap: 0.5em;
-                            }
-                            /*//////////////////desktop style FOR frontpage/////////////////////*/
+    h5 {
+        position: absolute;
+        color: red;
+        font-size: 2.5em;
+        background-color: azure;
+        width: 300px;
+        text-align: center;
+        z-index: 10;
+        top: 5vh;
+        left: 2vw;
+    }
 
-                            @media only screen and (min-width: 666px) {
-                                #desctop {
-                                    display: block;
-                                }
-                                #mobile {
-                                    display: none;
-                                }
-                                li {
-                                    font-size: 2em;
-                                    margin-right: 15px;
-                                    margin-left: 15px;
-                                }
-                                .course {
-                                    grid-template-columns: 2/-1;
-                                }
-                                #starters h1 {
-                                    grid-row-end: span 4;
-                                }
-                            }
+    .sold {
+        position: relative;
+    }
+
+    .course {
+        display: grid;
+        grid-template-columns: repeat(auto-fil, minmax(20vw, 1fr));
+        grid-gap: 0.5em;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+        font-size: 1.3em;
+    }
+
+    .description p {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #B8C5CB;
+        width: 90vw;
+        font-family: Montserrat;
+        line-height: 30px;
+        font-size: 1.2em;
+    }
+
+    input:checked~p {
+        max-height: 25vh;
+    }
+
+    .dish h3 {
+        margin-top: 5px;
+    }
+
+    .veg {
+        color: green;
+        font-size: 1.3em;
+    }
+    /*//////////////////desktop style FOR frontpage/////////////////////*/
+
+    @media only screen and (min-width: 666px) {
+        body {
+            margin: 0;
+        }
+        header {
+            height: 30vh;
+        }
+        nav {
+            padding-top: 9vh;
+        }
+        #desctop {
+            display: block;
+        }
+        #mobile {
+            display: none;
+        }
+        li {
+            font-size: 2em;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        .course {
+            grid-template-columns: 2/-1;
+            margin-left: 100px;
+        }
+        .course h1 {
+            grid-column-end: span 4;
+        }
+        .description p {
+            width: 20vw;
+        }
+    }
