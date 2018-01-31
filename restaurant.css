@@ -1,0 +1,59 @@
+                            header {
+                                background-color: darkgray;
+                            }
+
+                            li,
+                            h3 {
+                                display: inline-block
+                            }
+
+                            nav {
+                                text-align: center
+                            }
+
+                            nav h3 {
+                                font-family: Chiller;
+                                font-size: 6em;
+                                color: mediumvioletred
+                            }
+
+                            #desctop {
+                                display: none;
+                            }
+
+                            li {
+                                font-size: 1.5em;
+                                margin-right: 15px;
+                            }
+
+                            body h4 {
+                                font-size: 3em;
+                                text-align: center;
+                            }
+
+                            #starters {
+                                display: grid;
+                                grid-template-columns: repeat(auto-fill, minmax(35em, 1fr));
+                                grid-gap: 0.5em;
+                            }
+                            /*//////////////////desktop style FOR frontpage/////////////////////*/
+
+                            @media only screen and (min-width: 666px) {
+                                #desctop {
+                                    display: block;
+                                }
+                                #mobile {
+                                    display: none;
+                                }
+                                li {
+                                    font-size: 2em;
+                                    margin-right: 15px;
+                                    margin-left: 15px;
+                                }
+                                .course {
+                                    grid-template-columns: 2/-1;
+                                }
+                                #starters h1 {
+                                    grid-row-end: span 4;
+                                }
+                            }
