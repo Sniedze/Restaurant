@@ -1,5 +1,5 @@
     header {
-        background-color: darkgray;
+        background-color: #E9E2D8;
     }
 
     li,
@@ -13,7 +13,7 @@
 
     nav h3 {
         font-family: Chiller;
-        font-size: 6em;
+        font-size: 5em;
         color: mediumvioletred;
         margin: 0;
     }
@@ -28,10 +28,10 @@
     }
 
     body h4 {
-        font-size: 4em;
+        font-size: 3.5em;
         text-align: center;
         font-family: Chiller;
-        margin: 5vh;
+        margin: 10px;
     }
 
     h5 {
@@ -55,28 +55,53 @@
         grid-template-columns: repeat(auto-fil, minmax(20vw, 1fr));
         grid-gap: 0.5em;
     }
+    /* The Modal (background) */
 
-    input {
+    .modal {
         display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+    /* Modal Content/Box */
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+    /* The Close Button */
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
     }
 
-    label {
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
         cursor: pointer;
-        font-size: 1.3em;
-    }
-
-    .description p {
-        max-height: 0;
-        overflow: hidden;
-        background-color: #B8C5CB;
-        width: 90vw;
-        font-family: Montserrat;
-        line-height: 30px;
-        font-size: 1.2em;
-    }
-
-    input:checked~p {
-        max-height: 25vh;
     }
 
     .dish h3 {
@@ -86,6 +111,10 @@
     .veg {
         color: green;
         font-size: 1.3em;
+    }
+
+    h1 {
+        background-color: #D1BEB7;
     }
     /*//////////////////desktop style FOR frontpage/////////////////////*/
 
@@ -119,5 +148,12 @@
         }
         .description p {
             width: 20vw;
+        }
+        nav h3 {
+            font-size: 6em;
+            color: mediumvioletred;
+        }
+        body h4 {
+            font-size: 5em;
         }
     }
