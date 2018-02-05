@@ -1,111 +1,133 @@
-    header {
-        background-color: #E9E2D8;
-    }
+header {
+    background-color: #E9E2D8;
+}
 
-    li,
-    nav h3 {
-        display: inline-block
-    }
+li,
+nav h3 {
+    display: inline-block
+}
 
-    nav {
-        text-align: center;
-    }
+nav {
+    text-align: center;
+}
 
-    nav h3 {
-        font-family: Chiller;
-        font-size: 5em;
-        color: mediumvioletred;
+nav h3 {
+    font-family: Chiller;
+    font-size: 5em;
+    color: mediumvioletred;
+    margin: 0;
+}
+
+#desctop {
+    display: none;
+}
+
+li {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+body h4 {
+    font-size: 3.5em;
+    text-align: center;
+    font-family: Chiller;
+    margin: 10px;
+}
+
+h5 {
+    position: absolute;
+    color: red;
+    font-size: 2.5em;
+    background-color: azure;
+    width: 300px;
+    text-align: center;
+    z-index: 10;
+    top: 5vh;
+    left: 2vw;
+}
+
+.sold {
+    position: relative;
+}
+
+main section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+    grid-gap: 0.5em;
+    text-align: center;
+}
+
+section h2 {
+    grid-column: 1/-1;
+    font-size: 3em;
+    background-color: #FAC5C1;
+    text-transform: capitalize;
+}
+
+section h3,
+section p {
+    text-align: left;
+}
+
+section h3:first-child {
+    font-size: 2em;
+    text-align: center;
+}
+
+section img {
+    width: 95vw;
+    max-width: 400px;
+}
+
+#menu {
+    text-align: center;
+}
+
+.veg {
+    color: green;
+    font-size: 1.3em;
+}
+
+h1 {
+    background-color: #D1BEB7;
+}
+
+
+/*//////////////////desktop style FOR frontpage/////////////////////*/
+
+@media only screen and (min-width: 666px) {
+    body {
         margin: 0;
     }
-
-    #desctop {
-        display: none;
+    header {
+        height: 30vh;
     }
-
-    li {
-        font-size: 1.5em;
-        margin-right: 15px;
-    }
-
-    body h4 {
-        font-size: 3.5em;
-        text-align: center;
-        font-family: Chiller;
-        margin: 10px;
-    }
-
-    h5 {
-        position: absolute;
-        color: red;
-        font-size: 2.5em;
-        background-color: azure;
-        width: 300px;
-        text-align: center;
-        z-index: 10;
-        top: 5vh;
-        left: 2vw;
-    }
-
-    .sold {
-        position: relative;
-    }
-
-    .list {
-        display: grid;
-        grid-template-columns: repeat(auto-fil, minmax(20vw, 1fr));
-        grid-gap: 0.5em;
-    }
-
-    .dish h3 {
-        margin-top: 5px;
-    }
-
-    .veg {
-        color: green;
-        font-size: 1.3em;
-    }
-
-    h1 {
+    main {
+        margin: 0 15vw 15vw 15vw;
         background-color: #D1BEB7;
     }
-    /*//////////////////desktop style FOR frontpage/////////////////////*/
-
-    @media only screen and (min-width: 666px) {
-        body {
-            margin: 0;
-        }
-        header {
-            height: 30vh;
-        }
-        nav {
-            padding-top: 9vh;
-        }
-        #desctop {
-            display: block;
-        }
-        #mobile {
-            display: none;
-        }
-        li {
-            font-size: 2em;
-            margin-right: 15px;
-            margin-left: 15px;
-        }
-        .course {
-            grid-template-columns: 2/-1;
-            margin-left: 100px;
-        }
-        .course h1 {
-            grid-column-end: span 4;
-        }
-        .description p {
-            width: 20vw;
-        }
-        nav h3 {
-            font-size: 6em;
-            color: mediumvioletred;
-        }
-        body h4 {
-            font-size: 5em;
-        }
+    nav {
+        padding-top: 9vh;
     }
+    #desctop {
+        display: block;
+    }
+    #mobile {
+        display: none;
+    }
+    li {
+        font-size: 2em;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .description p {
+        width: 20vw;
+    }
+    nav h3 {
+        font-size: 6em;
+        color: mediumvioletred;
+    }
+    body h4 {
+        font-size: 5em;
+    }
+}
