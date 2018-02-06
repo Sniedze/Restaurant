@@ -1,5 +1,5 @@
 "use strict"
-const mylink = "http://kea-alt-del.dk/t5/api/productlist";
+const productlink = "http://kea-alt-del.dk/t5/api/productlist";
 const imagePath = "http://kea-alt-del.dk/t5/site/imgs/";
 const catNames = "http://kea-alt-del.dk/t5/api/categories";
 const main = document.querySelector("main");
@@ -19,35 +19,20 @@ function createCatContainers(categories) {
         section.id = category;
 
         h2.textContent = category;
-        if (h2.textContent == "starter") {
-            h2.textContent = "Starters";
-        }
-        if (h2.textContent == "main") {
-            h2.textContent = "Main dishes";
-        }
-        if (h2.textContent == "dessert") {
-            h2.textContent = "desserts";
-        }
-
         section.appendChild(h2);
         main.appendChild(section);
 
         const a = document.createElement("a");
         a.textContent = category;
-        if (a.textContent == "starter") {
-            a.textContent = "Starters";
-        }
-        if (a.textContent == "main") {
-            a.textContent = "Main dishes";
-        }
-        if (a.textContent == "dessert") {
-            a.textContent = "desserts";
+        if ((a, h2).textContent == "starter" || (a, h2).textContent == "main" || (a, h2).textContent == "dessert") {
+            a.append("s");
+            h2.append("s");
         }
         a.href = "#";
         a.addEventListener("click", () => filter(category));
         nav.appendChild(a);
     });
-    fetch(mylink).then(result => result.json()).then(data => show(data));
+    fetch(productlink).then(result => result.json()).then(data => show(data));
 }
 
 

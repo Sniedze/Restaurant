@@ -2,6 +2,10 @@ header {
     background-color: #E9E2D8;
 }
 
+main {
+    background-color: #D1BEB7;
+}
+
 li,
 nav h3 {
     display: inline-block
@@ -68,7 +72,7 @@ section h2 {
 section h3,
 section p {
     text-align: left;
-    margin-left: 5vw;
+    margin-left: 7vw;
 }
 
 section h3:first-child {
@@ -105,9 +109,9 @@ h1 {
 
 #menu_nav a {
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.3em;
     color: black;
-    margin: 0em 1em 3em 1em;
+    margin: 5px;
     text-transform: capitalize;
 }
 
@@ -152,5 +156,12 @@ h1 {
     }
     body h4 {
         font-size: 5em;
+    }
+    #menu_nav a {
+        text-decoration: none;
+        font-size: 2em;
+        color: black;
+        margin: 0em 1em 3em 1em;
+        text-transform: capitalize;
     }
 }
