@@ -59,14 +59,16 @@ main section {
 
 section h2 {
     grid-column: 1/-1;
-    font-size: 3em;
+    font-size: 4em;
     background-color: #FAC5C1;
     text-transform: capitalize;
+    font-family: Chiller;
 }
 
 section h3,
 section p {
     text-align: left;
+    margin-left: 5vw;
 }
 
 section h3:first-child {
@@ -90,6 +92,27 @@ section img {
 
 h1 {
     background-color: #D1BEB7;
+}
+
+.hidden {
+    display: none;
+}
+
+#menu_nav {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#menu_nav a {
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+    margin: 0em 1em 3em 1em;
+    text-transform: capitalize;
+}
+
+.name {
+    text-transform: capitalize;
 }
 
 
