@@ -69,15 +69,14 @@ section h2 {
     font-family: Chiller;
 }
 
-section h3,
 section p {
-    text-align: left;
-    margin-left: 7vw;
+    display: inline-block;
 }
 
 section h3:first-child {
     font-size: 2em;
     text-align: center;
+    margin-left: 0;
 }
 
 section img {
@@ -117,6 +116,51 @@ h1 {
 
 .name {
     text-transform: capitalize;
+}
+
+.price,
+.discountprice {
+    padding: 0.5em;
+    background: #E9E2D8;
+    margin-left: 0;
+}
+
+.price {
+    display: inline-block;
+    margin-left: 0;
+}
+
+.discountprice {
+    background: #FAC5C1;
+    display: inline-block;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.modal_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 80vh;
+    background: rgba(0, 0, 0, .7);
+    padding-top: 10vh;
+    z-index: 20;
+}
+
+.modal_background aside {
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+    background: #fff;
+    padding: 1em;
+}
+
+button {
+    display: inline-block;
+    margin-left: 20px;
 }
 
 

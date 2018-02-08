@@ -1,14 +1,17 @@
 "use strict"
 const productlink = "http://kea-alt-del.dk/t5/api/productlist";
+const plink = "http://kea-alt-del.dk/t5/api/product?id=";
 const imagePath = "http://kea-alt-del.dk/t5/site/imgs/";
 const catNames = "http://kea-alt-del.dk/t5/api/categories";
 const main = document.querySelector("main");
 const template = document.querySelector("template").content;
 const nav = document.querySelector("#menu_nav");
 const all = document.querySelector("#menu_nav a");
-
+const modal = document.querySelector(".modal_background");
 let h2 = document.querySelector("section h2");
+
 all.addEventListener("click", () => filter("all"));
+
 
 fetch(catNames).then(result => result.json()).then(data => createCatContainers(data));
 
@@ -52,9 +55,11 @@ function filter(category) {
 
 
 function show(data) {
+
     data.forEach(element => {
         const section = document.querySelector("#" + element.category);
         const clone = template.cloneNode(true);
+        console.log(element.id);
         clone.querySelector("img").src = "http://kea-alt-del.dk/t5/site/imgs/small/" + element.image + "-sm.jpg";
         if (element.name == "Russisk salatRussian salad") {
             element.name = "Russian salad";
@@ -68,14 +73,44 @@ function show(data) {
         clone.querySelector(".name").textContent = element.name;
 
         clone.querySelector(".short-description").textContent = element.shortdescription;
-        clone.querySelector(".price span").textContent = element.price;
+        clone.querySelector(".price span").textContent = "Price " + element.price;
+        clone.querySelector("button").addEventListener("click", () => {
+            fetch(plink + element.id).then(result => result.json()).then(product => showDetails(product));
+        })
 
 
         if (element.alcohol) {
 
             clone.querySelector(".alcohol").textContent = "Contains alcohol " + element.alcohol + "%";
         }
+        if (element.discount) {
+            const newPrice = Math.ceil(element.price - element.price * element.discount / 100);
+            clone.querySelector(".discountprice span").textContent = "New Price " + newPrice;
+            clone.querySelector(".discountprice.hide").classList.remove("hide");
+            clone.querySelector(".price").classList.add("strike");
+        }
         section.appendChild(clone);
 
     })
+}
+
+
+function showDetails(product) {
+    modal.querySelector(".modal_name").textContent = product.name;
+    modal.querySelector(".modal_image").src = "http://kea-alt-del.dk/t5/site/imgs/small/" + product.image + "-sm.jpg";
+    modal.querySelector(".modal_description").textContent = product.longdescription;
+    let price = modal.querySelector(".modal_price");
+    if (product.discount) {
+        const newPrice = Math.floor(product.price - (product.price * product.discount / 100));
+        price.textContent = "Now " + newPrice + " kr.";
+    } else {
+        price.textContent = "Price " + product.price + " kr.";
+    }
+
+    modal.classList.remove("hidden");
+}
+modal.addEventListener("click", hideModal);
+
+function hideModal() {
+    modal.classList.add("hidden");
 }
