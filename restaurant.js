@@ -59,7 +59,6 @@ function show(data) {
     data.forEach(element => {
         const section = document.querySelector("#" + element.category);
         const clone = template.cloneNode(true);
-        console.log(element.id);
         clone.querySelector("img").src = "http://kea-alt-del.dk/t5/site/imgs/small/" + element.image + "-sm.jpg";
         if (element.name == "Russisk salatRussian salad") {
             element.name = "Russian salad";
@@ -79,6 +78,14 @@ function show(data) {
         })
 
 
+        if (element.soldout) {
+            clone.querySelector("article img").style.filter = "grayscale()";
+            clone.querySelector("h5").classList.remove("hidden");
+        }
+        if (element.vegetarian) {
+
+            clone.querySelector(".veg").textContent = "Suitable for Vegetarians";
+        }
         if (element.alcohol) {
 
             clone.querySelector(".alcohol").textContent = "Contains alcohol " + element.alcohol + "%";
@@ -86,7 +93,7 @@ function show(data) {
         if (element.discount) {
             const newPrice = Math.ceil(element.price - element.price * element.discount / 100);
             clone.querySelector(".discountprice span").textContent = "New Price " + newPrice;
-            clone.querySelector(".discountprice.hide").classList.remove("hide");
+            clone.querySelector(".discountprice").classList.remove("hidden");
             clone.querySelector(".price").classList.add("strike");
         }
         section.appendChild(clone);

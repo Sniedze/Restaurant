@@ -6,6 +6,22 @@ main {
     background-color: #D1BEB7;
 }
 
+footer {
+    background-color: #E9E2D8;
+    width: 200px;
+    height: 5vh;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: Montserrat;
+    color: #585C5D;
+    font-size: 1.5em;
+}
+
 li,
 nav h3 {
     display: inline-block
@@ -41,22 +57,22 @@ body h4 {
 h5 {
     position: absolute;
     color: red;
-    font-size: 2.5em;
+    font-size: 3em;
     background-color: azure;
-    width: 300px;
-    text-align: center;
     z-index: 10;
-    top: 5vh;
-    left: 2vw;
+    top: 15%;
+    left: 30%;
+    width: 250px;
 }
 
-.sold {
+article {
     position: relative;
+    min-width: 25em;
 }
 
 main section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
     grid-gap: 0.5em;
     text-align: center;
 }
@@ -70,11 +86,12 @@ section h2 {
 }
 
 section p {
-    display: inline-block;
+    font-size: 1.2em;
+    margin: 0;
 }
 
 section h3:first-child {
-    font-size: 2em;
+    font-size: 1.7em;
     text-align: center;
     margin-left: 0;
 }
@@ -84,13 +101,10 @@ section img {
     max-width: 400px;
 }
 
-#menu {
-    text-align: center;
-}
-
 .veg {
     color: green;
     font-size: 1.3em;
+    margin-top: 0;
 }
 
 h1 {
@@ -122,17 +136,16 @@ h1 {
 .discountprice {
     padding: 0.5em;
     background: #E9E2D8;
-    margin-left: 0;
-}
-
-.price {
+    margin: 0;
     display: inline-block;
-    margin-left: 0;
 }
 
 .discountprice {
     background: #FAC5C1;
-    display: inline-block;
+}
+
+.hidden {
+    display: none;
 }
 
 .strike {
@@ -142,25 +155,39 @@ h1 {
 .modal_background {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 80vw;
-    height: 80vh;
+    left: 25vw;
+    width: 35vw;
+    height: 65vh;
     background: rgba(0, 0, 0, .7);
-    padding-top: 10vh;
     z-index: 20;
+    padding-top: 5vh;
+    border-radius: 20px;
 }
 
 .modal_background aside {
-    width: 60vw;
-    height: 60vh;
+    width: 30vw;
+    height: 55vh;
     margin: auto;
     background: #fff;
     padding: 1em;
+    border-radius: 20px;
 }
 
 button {
-    display: inline-block;
-    margin-left: 20px;
+    margin: 0;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.alcohol,
+.price {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.details {
+    text-align: left;
+    margin-left: 15px;
 }
 
 
@@ -174,7 +201,7 @@ button {
         height: 30vh;
     }
     main {
-        margin: 0 15vw 15vw 15vw;
+        margin: 0 10vw 10vw 10vw;
         background-color: #D1BEB7;
     }
     nav {
